@@ -1,0 +1,30 @@
+##Vincent Au
+##FlyerFlo Inc.
+##Summer Intern Applicant
+##Instructions:
+##When prompted to do so, enter a subreddit URL. The reddit alien logo will then
+##be downloaded to your computer in the same location where this python program is
+
+
+import urllib2
+##find_image_url:
+##Purpose: Helper function to find the image URL of from the given reddit URL
+def image_url(url):
+    f = urllib2.urlopen(url)
+    html = f.read()
+    img_code = "<img id='header-img' src="
+    img_alien = html[html.index(img_code):]
+    f.close()
+    return img_alien[len(img_code)+1:img_alien.index(' width')-1]
+
+##reddit_download:
+##Purpose: To download the reddit alien logo given the URL of a subreddit page.
+def reddit_download(url):
+    f = open('redditalien.png','wb')
+    img = urllib2.urlopen(image_url(url))
+    f.write(img.read())
+    f.close()
+
+reddit_download(raw_input('Enter subreddit URL: '))
+    
+    
