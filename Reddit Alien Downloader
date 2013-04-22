@@ -2,8 +2,9 @@
 ##FlyerFlo Inc.
 ##Summer Intern Applicant
 ##Instructions:
-##When prompted to do so, enter a subreddit URL. The reddit alien logo will then
-##be downloaded to your computer in the same location where this python program is
+##When prompted to do so, enter a subreddit URL as a string (with quotations around it)
+##e.g. 'http://www.reddit.com/r/uwaterloo' The reddit alien logo will then
+##be downloaded to your computer in the same location where this python program is.
 
 
 import urllib2
